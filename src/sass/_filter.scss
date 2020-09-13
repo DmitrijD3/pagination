@@ -1,0 +1,17 @@
+.filter{
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+
+  &:first-child{
+    margin-left: 0px;
+  }
+  &__txt{
+    font-size: 14px;
+    margin-right: 12px;
+  }
+  &__select{
+    min-width: 50px;
+    padding: 6px;
+  }
+}
