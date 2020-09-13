@@ -57,28 +57,31 @@ const App = () => {
 
   return (
     <div className='container'>
-      {loading && <Loader />}
-      <header>
-        <Filter
-          text="Sort by price:"
-          handleChange={pageSortChange}
-          optionsArr={sortParams.sortTypes}
-          defaultVal={sortType}
-         />
-        <Filter
-          text="Items per page:"
-          handleChange={pageSizeChange}
-          optionsArr={sortParams.pageSizes}
-          defaultVal={pageSize}
-        />
-      </header>
-      <CardList items={selectedItems} />
-      <Pagination
-        currentPage={currentPage}
-        itemsPerPage={pageSize}
-        totalItems={items.length}
-        paginate={paginate}
-      />
+      {loading ? <Loader /> :
+        <>
+          <header>
+            <Filter
+              text="Sort by price:"
+              handleChange={pageSortChange}
+              optionsArr={sortParams.sortTypes}
+              defaultVal={sortType}
+             />
+            <Filter
+              text="Items per page:"
+              handleChange={pageSizeChange}
+              optionsArr={sortParams.pageSizes}
+              defaultVal={pageSize}
+            />
+          </header>
+          <CardList items={selectedItems} />
+          <Pagination
+            currentPage={currentPage}
+            itemsPerPage={pageSize}
+            totalItems={items.length}
+            paginate={paginate}
+          />
+        </>
+      }
     </div>
   );
 };
